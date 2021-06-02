@@ -17,10 +17,9 @@ CREATE TABLE `users` (
 CREATE TABLE `users_mark` (
 	`id` INT ( 11 ) NOT NULL auto_increment,
 	`fromUserId` INT ( 11 ) NOT NULL,
-	`fromUserMarkVal` INT ( 2 ),
+	`markVal` INT ( 2 ),
 	`toUserId` INT ( 255 ) NOT NULL,
-	`toUserMarkVal` INT ( 2 ),
-	`swip` INT ( 2 ) NOT NULL,
+	`swiped` INT ( 2 ) NOT NULL DEFAULT 0,
 	`created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	`updated_at` DATETIME ON UPDATE CURRENT_TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 PRIMARY KEY ( `id` ),

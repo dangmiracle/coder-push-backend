@@ -17,12 +17,14 @@ app.use(
         extended: true,
     })
 );
-app.use('/users', cors(corsOptions), usersRouter);
 
 
 app.get('/', (req, res) => {
     res.json({ 'message': 'Welcome to CoderPush' });
 })
+
+app.use('/users', cors(corsOptions), usersRouter);
+
 
 app.listen(port, () => {
     console.log(`CoderPush app is listening at http://localhost:${port}`)
