@@ -6,7 +6,7 @@ async function getUsers(page = 1) {
     const offset = helper.getOffset(page, config.listPerPage);
     const rows = await db.query(
         `SELECT id, firstName, lastName, dateOfBirth, picture 
-    FROM users LIMIT ?,? `,
+    FROM users WHERE id <> 1 LIMIT ?,? `,
         [offset, config.listPerPage]
     );
     const data = helper.emptyOrRows(rows);
